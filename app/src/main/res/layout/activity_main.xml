@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainScreen">
+
+    <Button
+        android:id="@+id/inspectionButton"
+        android:layout_width="600dp"
+        android:layout_height="174dp"
+        android:text="@string/besiktningText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/installationButton"
+        android:layout_width="600dp"
+        android:layout_height="174dp"
+        android:text="@string/monteringText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/inspectionButton" />
+
+    <Button
+        android:id="@+id/demontageButton"
+        android:layout_width="600dp"
+        android:layout_height="174dp"
+        android:text="@string/demonteringText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/installationButton" />
+
+    <Button
+        android:id="@+id/updateTarifsButton"
+        android:layout_width="600dp"
+        android:layout_height="174dp"
+        android:layout_marginTop="4dp"
+        android:text="@string/ndring_av_taxaText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/demontageButton" />
+
+    <Button
+        android:id="@+id/troubleshootButton"
+        android:layout_width="600dp"
+        android:layout_height="172dp"
+        android:text="@string/fels_kning_av_taxameterText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/updateTarifsButton" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

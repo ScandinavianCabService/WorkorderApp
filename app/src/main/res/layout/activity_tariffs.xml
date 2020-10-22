@@ -1,0 +1,662 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".TariffScreen">
+
+    <TextView
+        android:id="@+id/timTextView5"
+        android:layout_width="120dp"
+        android:layout_height="25dp"
+        android:gravity="center"
+        android:text="@string/kr_timText"
+        app:layout_constraintBottom_toTopOf="@+id/tim5"
+        app:layout_constraintEnd_toStartOf="@+id/avgPriceButton5"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/km5TextView"
+        app:layout_constraintTop_toBottomOf="@+id/tariffNameField4" />
+
+    <EditText
+        android:id="@+id/g1"
+        android:layout_width="120dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="4dp"
+        android:autofillHints=""
+        android:ems="10"
+        android:inputType="numberDecimal"
+        android:nextFocusDown="@id/km1"
+        app:layout_constraintBottom_toTopOf="@+id/tariffNameField1"
+        app:layout_constraintEnd_toStartOf="@+id/km1"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/basePriceTextView1" />
+
+    <EditText
+        android:id="@+id/km1"
+        android:layout_width="120dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="4dp"
+        android:autofillHints=""
+        android:ems="10"
+        android:inputType="numberDecimal"
+        android:nextFocusDown="@id/tim1"
+        app:layout_constraintBottom_toTopOf="@+id/tariffNameField1"
+        app:layout_constraintEnd_toStartOf="@+id/tim1"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/g1"
+        app:layout_constraintTop_toBottomOf="@+id/km1TextView" />
+
+    <EditText
+        android:id="@+id/tim1"
+        android:layout_width="120dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="4dp"
+        android:autofillHints=""
+        android:ems="10"
+        android:inputType="numberDecimal"
+        android:nextFocusDown="@id/g2"
+        app:layout_constraintBottom_toTopOf="@+id/tariffNameField1"
+        app:layout_constraintEnd_toStartOf="@+id/avgPriceButton1"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/km1"
+        app:layout_constraintTop_toBottomOf="@+id/timTextView1" />
+
+    <TextView
+        android:id="@+id/basePriceTextView1"
+        android:layout_width="120dp"
+        android:layout_height="25dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="12dp"
+        android:gravity="center"
+        android:text="@string/grund_prisText"
+        app:layout_constraintBottom_toTopOf="@+id/g1"
+        app:layout_constraintEnd_toStartOf="@+id/km1TextView"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/timTextView1"
+        android:layout_width="120dp"
+        android:layout_height="25dp"
+        android:layout_marginTop="12dp"
+        android:gravity="center"
+        android:text="@string/kr_timText"
+        app:layout_constraintBottom_toTopOf="@+id/tim1"
+        app:layout_constraintEnd_toStartOf="@+id/avgPriceButton1"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/km1TextView"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/avgPriceButton1"
+        android:layout_width="180dp"
+        android:layout_height="50dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="30dp"
+        android:gravity="center"
+        android:text="@string/avgPriceButtonText"
+        app:layout_constraintBottom_toTopOf="@+id/avgPriceButton2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/timTextView1"
+        app:layout_constraintTop_toBottomOf="@+id/barrier8" />
+
+    <Button
+        android:id="@+id/avgPriceButton2"
+        android:layout_width="180dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="50dp"
+        android:text="@string/avgPriceButtonText"
+        app:layout_constraintBottom_toTopOf="@+id/avgPriceButton3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/timTextView2"
+        app:layout_constraintTop_toBottomOf="@+id/avgPriceButton1" />
+
+    <Button
+        android:id="@+id/avgPriceButton4"
+        android:layout_width="180dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="50dp"
+        android:text="@string/avgPriceButtonText"
+        app:layout_constraintBottom_toTopOf="@+id/avgPriceButton5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/timTextView4"
+        app:layout_constraintTop_toBottomOf="@+id/avgPriceButton3" />
+
+    <Button
+        android:id="@+id/avgPriceButton5"
+        android:layout_width="180dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="200dp"
+        android:text="@string/avgPriceButtonText"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/timTextView5"
+        app:layout_constraintTop_toBottomOf="@+id/avgPriceButton4" />
+
+    <Button
+        android:id="@+id/avgPriceButton3"
+        android:layout_width="180dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="50dp"
+        android:text="@string/avgPriceButtonText"
+        app:layout_constraintBottom_toTopOf="@+id/avgPriceButton4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tim3"
+        app:layout_constraintTop_toBottomOf="@+id/avgPriceButton2" />
+
+    <TextView
+        android:id="@+id/avgPrice4"
+        android:layout_width="180dp"
+        android:layout_height="44dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="40dp"
+        android:gravity="center"
+        android:textSize="36sp"
+        app:layout_constraintBottom_toTopOf="@+id/avgPrice5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/tariffNameField4"
+        app:layout_constraintTop_toBottomOf="@+id/avgPrice3"
+        tools:text="avgprice4" />
+
+    <TextView
+        android:id="@+id/avgPrice3"
+        android:layout_width="180dp"
+        android:layout_height="44dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="40dp"
+        android:gravity="center"
+        android:textSize="36sp"
+        app:layout_constraintBottom_toTopOf="@+id/avgPrice4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/tariffNameField3"
+        app:layout_constraintTop_toBottomOf="@+id/avgPrice2"
+        tools:text="avgprice3" />
+
+    <TextView
+        android:id="@+id/avgPrice1"
+        android:layout_width="180dp"
+        android:layout_height="44dp"
+        android:layout_marginTop="80dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="40dp"
+        android:gravity="center"
+        android:textAlignment="center"
+        android:textSize="36sp"
+        app:layout_constraintBottom_toTopOf="@+id/avgPrice2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/tariffNameField1"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="avgprice1" />
+
+    <TextView
+        android:id="@+id/avgPrice2"
+        android:layout_width="180dp"
+        android:layout_height="44dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="40dp"
+        android:gravity="center"
+        android:textSize="36sp"
+        app:layout_constraintBottom_toTopOf="@+id/avgPrice3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/tariffNameField2"
+        app:layout_constraintTop_toBottomOf="@+id/avgPrice1"
+        tools:text="avgprice2" />
+
+    <TextView
+        android:id="@+id/avgPrice5"
+        android:layout_width="184dp"
+        android:layout_height="44dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="80dp"
+        android:gravity="center"
+        android:textSize="32sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/tariffNameField5"
+        app:layout_constraintTop_toBottomOf="@+id/avgPrice4"
+        tools:text="avgprice5" />
+
+    <TextView
+        android:id="@+id/km1TextView"
+        android:layout_width="120dp"
+        android:layout_height="25dp"
+        android:layout_marginTop="12dp"
+        android:gravity="center"
+        android:text="@string/kr_kmText"
+        app:layout_constraintBottom_toTopOf="@+id/km1"
+        app:layout_constraintEnd_toStartOf="@+id/timTextView1"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/basePriceTextView1"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/tariffBackButton"
+        android:layout_width="87dp"
+        android:layout_height="47dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="877dp"
+        android:layout_marginEnd="472dp"
+        android:layout_marginBottom="35dp"
+        android:text="@string/backText"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <EditText
+        android:id="@+id/tariffNameField2"
+        android:layout_width="376dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:autofillHints=""
+        android:clickable="false"
+        android:ems="10"
+        android:enabled="true"
+        android:focusable="auto"
+        android:hint="@string/tariffText"
+        android:inputType="textPersonName|textCapSentences"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@+id/tariffNameField3"
+        app:layout_constraintEnd_toStartOf="@+id/avgPrice2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tariffNameField1"
+        tools:visibility="visible" />
+
+    <EditText
+        android:id="@+id/tariffNameField1"
+        android:layout_width="376dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:autofillHints=""
+        android:clickable="false"
+        android:ems="10"
+        android:enabled="true"
+        android:focusable="auto"
+        android:hint="@string/tariffText"
+        android:inputType="textPersonName|textCapSentences"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@+id/tariffNameField2"
+        app:layout_constraintEnd_toStartOf="@+id/avgPrice1"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:visibility="visible" />
+
+    <TextView
+        android:id="@+id/basePriceTextView2"
+        android:layout_width="120dp"
+        android:layout_height="25dp"
+        android:layout_marginStart="8dp"
+        android:gravity="center"
+        android:text="@string/grund_prisText"
+        app:layout_constraintBottom_toTopOf="@+id/g2"
+        app:layout_constraintEnd_toStartOf="@+id/km2TextView"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tariffNameField1" />
+
+    <TextView
+        android:id="@+id/km2TextView"
+        android:layout_width="120dp"
+        android:layout_height="25dp"
+        android:gravity="center"
+        android:text="@string/kr_kmText"
+        app:layout_constraintBottom_toTopOf="@+id/km2"
+        app:layout_constraintEnd_toStartOf="@+id/timTextView2"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/basePriceTextView2"
+        app:layout_constraintTop_toBottomOf="@+id/tariffNameField1" />
+
+    <TextView
+        android:id="@+id/timTextView2"
+        android:layout_width="120dp"
+        android:layout_height="25dp"
+        android:gravity="center"
+        android:text="@string/kr_timText"
+        app:layout_constraintBottom_toTopOf="@+id/tim2"
+        app:layout_constraintEnd_toStartOf="@+id/avgPriceButton2"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/km2TextView"
+        app:layout_constraintTop_toBottomOf="@+id/tariffNameField1" />
+
+    <EditText
+        android:id="@+id/g2"
+        android:layout_width="120dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="4dp"
+        android:ems="10"
+        android:inputType="numberDecimal"
+        android:nextFocusDown="@id/km2"
+        app:layout_constraintBottom_toTopOf="@+id/tariffNameField2"
+        app:layout_constraintEnd_toStartOf="@+id/km2"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/basePriceTextView2" />
+
+    <EditText
+        android:id="@+id/km2"
+        android:layout_width="120dp"
+        android:layout_height="50dp"
+        android:ems="10"
+        android:inputType="numberDecimal"
+        android:nextFocusDown="@id/tim2"
+        app:layout_constraintBottom_toTopOf="@+id/tariffNameField2"
+        app:layout_constraintEnd_toStartOf="@+id/tim2"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/g2"
+        app:layout_constraintTop_toBottomOf="@+id/km2TextView" />
+
+    <EditText
+        android:id="@+id/tim2"
+        android:layout_width="120dp"
+        android:layout_height="50dp"
+        android:ems="10"
+        android:inputType="numberDecimal"
+        app:layout_constraintBottom_toTopOf="@+id/tariffNameField2"
+        app:layout_constraintEnd_toStartOf="@+id/avgPriceButton2"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/km2"
+        app:layout_constraintTop_toBottomOf="@+id/timTextView2" />
+
+    <TextView
+        android:id="@+id/basePriceTextView3"
+        android:layout_width="120dp"
+        android:layout_height="25dp"
+        android:layout_marginStart="8dp"
+        android:gravity="center"
+        android:text="@string/grund_prisText"
+        app:layout_constraintBottom_toTopOf="@+id/g3"
+        app:layout_constraintEnd_toStartOf="@+id/km3TextView"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tariffNameField2" />
+
+    <TextView
+        android:id="@+id/km4TextView"
+        android:layout_width="120dp"
+        android:layout_height="25dp"
+        android:gravity="center"
+        android:text="@string/kr_kmText"
+        app:layout_constraintBottom_toTopOf="@+id/km4"
+        app:layout_constraintEnd_toStartOf="@+id/timTextView4"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/basePriceTextView4"
+        app:layout_constraintTop_toBottomOf="@+id/tariffNameField3" />
+
+    <TextView
+        android:id="@+id/km5TextView"
+        android:layout_width="120dp"
+        android:layout_height="25dp"
+        android:gravity="center"
+        android:text="@string/kr_kmText"
+        app:layout_constraintBottom_toTopOf="@+id/km5"
+        app:layout_constraintEnd_toStartOf="@+id/timTextView5"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/basePriceTextView5"
+        app:layout_constraintTop_toBottomOf="@+id/tariffNameField4" />
+
+    <TextView
+        android:id="@+id/basePriceTextView4"
+        android:layout_width="120dp"
+        android:layout_height="25dp"
+        android:layout_marginStart="8dp"
+        android:gravity="center"
+        android:text="@string/grund_prisText"
+        app:layout_constraintBottom_toTopOf="@+id/g4"
+        app:layout_constraintEnd_toStartOf="@+id/km4TextView"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tariffNameField3" />
+
+    <TextView
+        android:id="@+id/timTextView4"
+        android:layout_width="120dp"
+        android:layout_height="25dp"
+        android:gravity="center"
+        android:text="@string/kr_timText"
+        app:layout_constraintBottom_toTopOf="@+id/tim4"
+        app:layout_constraintEnd_toStartOf="@+id/avgPriceButton4"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/km4TextView"
+        app:layout_constraintTop_toBottomOf="@+id/tariffNameField3" />
+
+    <TextView
+        android:id="@+id/basePriceTextView5"
+        android:layout_width="120dp"
+        android:layout_height="25dp"
+        android:layout_marginStart="8dp"
+        android:gravity="center"
+        android:text="@string/grund_prisText"
+        app:layout_constraintBottom_toTopOf="@+id/g5"
+        app:layout_constraintEnd_toStartOf="@+id/km5TextView"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tariffNameField4" />
+
+    <EditText
+        android:id="@+id/g5"
+        android:layout_width="120dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="8dp"
+        android:ems="10"
+        android:inputType="numberDecimal"
+        app:layout_constraintBottom_toTopOf="@+id/tariffNameField5"
+        app:layout_constraintEnd_toStartOf="@+id/km5"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/basePriceTextView5" />
+
+    <EditText
+        android:id="@+id/km5"
+        android:layout_width="120dp"
+        android:layout_height="50dp"
+        android:ems="10"
+        android:inputType="numberDecimal"
+        app:layout_constraintBottom_toTopOf="@+id/tariffNameField5"
+        app:layout_constraintEnd_toStartOf="@+id/tim5"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/g5"
+        app:layout_constraintTop_toBottomOf="@+id/km5TextView" />
+
+    <EditText
+        android:id="@+id/tim4"
+        android:layout_width="120dp"
+        android:layout_height="50dp"
+        android:ems="10"
+        android:inputType="numberDecimal"
+        app:layout_constraintBottom_toTopOf="@+id/tariffNameField4"
+        app:layout_constraintEnd_toStartOf="@+id/avgPriceButton4"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/km4"
+        app:layout_constraintTop_toBottomOf="@+id/timTextView4" />
+
+    <EditText
+        android:id="@+id/g4"
+        android:layout_width="120dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="8dp"
+        android:ems="10"
+        android:inputType="numberDecimal"
+        app:layout_constraintBottom_toTopOf="@+id/tariffNameField4"
+        app:layout_constraintEnd_toStartOf="@+id/km4"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/basePriceTextView4" />
+
+    <EditText
+        android:id="@+id/km4"
+        android:layout_width="120dp"
+        android:layout_height="50dp"
+        android:ems="10"
+        android:inputType="numberDecimal"
+        app:layout_constraintBottom_toTopOf="@+id/tariffNameField4"
+        app:layout_constraintEnd_toStartOf="@+id/tim4"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/g4"
+        app:layout_constraintTop_toBottomOf="@+id/km4TextView" />
+
+    <EditText
+        android:id="@+id/tim5"
+        android:layout_width="120dp"
+        android:layout_height="50dp"
+        android:ems="10"
+        android:inputType="numberDecimal"
+        app:layout_constraintBottom_toTopOf="@+id/tariffNameField5"
+        app:layout_constraintEnd_toStartOf="@+id/avgPriceButton5"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/km5"
+        app:layout_constraintTop_toBottomOf="@+id/timTextView5" />
+
+    <EditText
+        android:id="@+id/g3"
+        android:layout_width="120dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="8dp"
+        android:ems="10"
+        android:inputType="numberDecimal"
+        app:layout_constraintBottom_toTopOf="@+id/tariffNameField3"
+        app:layout_constraintEnd_toStartOf="@+id/km3"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/basePriceTextView3" />
+
+    <EditText
+        android:id="@+id/km3"
+        android:layout_width="120dp"
+        android:layout_height="50dp"
+        android:ems="10"
+        android:inputType="numberDecimal"
+        app:layout_constraintBottom_toTopOf="@+id/tariffNameField3"
+        app:layout_constraintEnd_toStartOf="@+id/tim3"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/g3"
+        app:layout_constraintTop_toBottomOf="@+id/km3TextView" />
+
+    <EditText
+        android:id="@+id/tariffNameField5"
+        android:layout_width="376dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:ems="10"
+        android:hint="@string/tariffText"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/avgPrice5"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tariffNameField4" />
+
+    <EditText
+        android:id="@+id/tariffNameField4"
+        android:layout_width="376dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:ems="10"
+        android:hint="@string/tariffText"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toTopOf="@+id/tariffNameField5"
+        app:layout_constraintEnd_toStartOf="@+id/avgPrice4"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tariffNameField3" />
+
+    <EditText
+        android:id="@+id/tariffNameField3"
+        android:layout_width="376dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:ems="10"
+        android:hint="@string/tariffText"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toTopOf="@+id/tariffNameField4"
+        app:layout_constraintEnd_toStartOf="@+id/avgPrice3"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tariffNameField2" />
+
+    <EditText
+        android:id="@+id/tim3"
+        android:layout_width="120dp"
+        android:layout_height="50dp"
+        android:ems="10"
+        android:inputType="numberDecimal"
+        app:layout_constraintBottom_toTopOf="@+id/tariffNameField3"
+        app:layout_constraintEnd_toStartOf="@+id/avgPriceButton3"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/km3"
+        app:layout_constraintTop_toBottomOf="@+id/timTextView3" />
+
+    <TextView
+        android:id="@+id/km3TextView"
+        android:layout_width="120dp"
+        android:layout_height="25dp"
+        android:gravity="center"
+        android:text="@string/kr_kmText"
+        app:layout_constraintBottom_toTopOf="@+id/km3"
+        app:layout_constraintEnd_toStartOf="@+id/timTextView3"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/basePriceTextView3"
+        app:layout_constraintTop_toBottomOf="@+id/tariffNameField2" />
+
+    <TextView
+        android:id="@+id/timTextView3"
+        android:layout_width="120dp"
+        android:layout_height="25dp"
+        android:gravity="center"
+        android:text="@string/kr_timText"
+        app:layout_constraintBottom_toTopOf="@+id/tim3"
+        app:layout_constraintEnd_toStartOf="@+id/avgPriceButton3"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/km3TextView"
+        app:layout_constraintTop_toBottomOf="@+id/tariffNameField2" />
+
+    <androidx.constraintlayout.widget.Barrier
+        android:id="@+id/barrier8"
+        android:layout_width="wrap_content"
+        android:layout_height="80dp"
+        app:barrierDirection="bottom"
+        tools:layout_editor_absoluteX="601dp"
+        tools:layout_editor_absoluteY="962dp" />
+
+    <Button
+        android:id="@+id/nextButton"
+        android:layout_width="88dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="196dp"
+        android:layout_marginTop="877dp"
+        android:layout_marginEnd="188dp"
+        android:layout_marginBottom="35dp"
+        android:text="@string/nextButtonText"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tariffBackButton"
+        app:layout_constraintTop_toBottomOf="@+id/avgPrice5"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

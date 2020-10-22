@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".TaximeterScreen">
+
+    <Button
+        android:id="@+id/m2Button"
+        android:layout_width="600dp"
+        android:layout_height="200dp"
+        android:text="@string/m2ButtonText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/c30Button"
+        android:layout_width="600dp"
+        android:layout_height="200dp"
+        android:text="@string/c30ButtonText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/m2Button" />
+
+    <Button
+        android:id="@+id/digitaxButton"
+        android:layout_width="600dp"
+        android:layout_height="200dp"
+        android:text="@string/digitaxButtonText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/c30Button" />
+
+    <Button
+        android:id="@+id/megtaxButton"
+        android:layout_width="600dp"
+        android:layout_height="200dp"
+        android:text="@string/megtaxButtonText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/digitaxButton" />
+
+    <Button
+        android:id="@+id/taxaBackButton"
+        android:layout_width="88dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginEnd="472dp"
+        android:layout_marginBottom="35dp"
+        android:text="@string/backButtonText"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
