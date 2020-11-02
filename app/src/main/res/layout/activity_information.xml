@@ -9,8 +9,7 @@
     <EditText
         android:id="@+id/regNrField"
         android:layout_width="140dp"
-        android:layout_height="100dp"
-        android:layout_marginStart="1dp"
+        android:layout_height="60dp"
         android:layout_marginEnd="25dp"
         android:autofillHints=""
         android:ems="10"
@@ -23,12 +22,12 @@
         app:layout_constraintBottom_toTopOf="@+id/companyNameField"
         app:layout_constraintEnd_toStartOf="@+id/orgnrField"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="@+id/guideline11" />
 
     <EditText
         android:id="@+id/companyNameField"
         android:layout_width="600dp"
-        android:layout_height="100dp"
+        android:layout_height="60dp"
         android:autofillHints=""
         android:ems="10"
         android:hint="@string/companyNameHint"
@@ -43,7 +42,7 @@
     <EditText
         android:id="@+id/adressField"
         android:layout_width="600dp"
-        android:layout_height="100dp"
+        android:layout_height="60dp"
         android:autofillHints=""
         android:ems="10"
         android:hint="@string/AdressHint"
@@ -57,7 +56,7 @@
     <EditText
         android:id="@+id/postnrField"
         android:layout_width="220dp"
-        android:layout_height="100dp"
+        android:layout_height="60dp"
         android:autofillHints=""
         android:ems="10"
         android:hint="@string/postNummerHint"
@@ -72,7 +71,7 @@
     <EditText
         android:id="@+id/ortField"
         android:layout_width="380dp"
-        android:layout_height="100dp"
+        android:layout_height="60dp"
         android:autofillHints=""
         android:ems="10"
         android:hint="@string/ortHint"
@@ -85,7 +84,7 @@
     <EditText
         android:id="@+id/emailField2"
         android:layout_width="600dp"
-        android:layout_height="100dp"
+        android:layout_height="60dp"
         android:autofillHints=""
         android:ems="10"
         android:hint="@string/epostHint"
@@ -99,7 +98,7 @@
     <EditText
         android:id="@+id/phoneField"
         android:layout_width="600dp"
-        android:layout_height="100dp"
+        android:layout_height="60dp"
         android:autofillHints=""
         android:ems="10"
         android:hint="@string/telefonHint"
@@ -110,53 +109,34 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/emailField2" />
 
-    <ProgressBar
-        android:id="@+id/progressBar2"
-        style="@android:style/Widget.DeviceDefault.Light.ProgressBar.Horizontal"
-        android:layout_width="427dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="252dp"
-        android:layout_marginBottom="60dp"
-        android:indeterminate="false"
-        android:max="8"
-        android:progress="0"
-        android:progressTint="#FF0000"
-        android:scrollbarSize="4dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/phoneField" />
-
     <Button
         android:id="@+id/infoBackButton"
         android:layout_width="88dp"
         android:layout_height="48dp"
-        android:layout_marginTop="29dp"
         android:layout_marginEnd="37dp"
-        android:layout_marginBottom="23dp"
+        android:layout_marginBottom="12dp"
         android:text="@string/infoBackButtonText"
         app:layout_constraintBottom_toTopOf="@+id/companyNameField"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/orgnrField"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="@+id/guideline11" />
 
     <Button
         android:id="@+id/infoDoneButton"
         android:layout_width="88dp"
         android:layout_height="48dp"
-        android:layout_marginStart="48dp"
         android:layout_marginTop="253dp"
         android:layout_marginEnd="37dp"
         android:layout_marginBottom="59dp"
         android:text="@string/infoDoneButtonText"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/progressBar2"
         app:layout_constraintTop_toBottomOf="@+id/phoneField" />
 
     <EditText
         android:id="@+id/orgnrField"
         android:layout_width="0dp"
-        android:layout_height="100dp"
+        android:layout_height="60dp"
         android:layout_marginStart="4dp"
         android:layout_marginEnd="62dp"
         android:autofillHints=""
@@ -169,6 +149,119 @@
         app:layout_constraintBottom_toTopOf="@+id/companyNameField"
         app:layout_constraintEnd_toStartOf="@+id/infoBackButton"
         app:layout_constraintStart_toEndOf="@+id/regNrField"
+        app:layout_constraintTop_toTopOf="@+id/guideline11" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="80dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="60dp" />
+
+    <Button
+        android:id="@+id/menu1info"
+        android:layout_width="120dp"
+        android:layout_height="60dp"
+        android:text="@string/menu1button"
+        app:layout_constraintBottom_toTopOf="@+id/guideline12"
+        app:layout_constraintEnd_toStartOf="@+id/menu2info"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/menu2info"
+        android:layout_width="120dp"
+        android:layout_height="60dp"
+        android:text="@string/menu2button"
+        app:layout_constraintBottom_toTopOf="@+id/guideline12"
+        app:layout_constraintEnd_toStartOf="@+id/menu3info"
+        app:layout_constraintStart_toEndOf="@+id/menu1info"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <Button
+        android:id="@+id/menu4info"
+        android:layout_width="120dp"
+        android:layout_height="60dp"
+        android:text="@string/menu4button"
+        app:layout_constraintBottom_toTopOf="@+id/guideline12"
+        app:layout_constraintEnd_toStartOf="@+id/menu5info"
+        app:layout_constraintStart_toEndOf="@+id/menu3info"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:id="@+id/menu5info"
+        android:layout_width="120dp"
+        android:layout_height="60dp"
+        android:text="@string/menu5button"
+        app:layout_constraintBottom_toTopOf="@+id/guideline12"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/menu4info"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <Button
+        android:id="@+id/menu3info"
+        android:layout_width="120dp"
+        android:layout_height="60dp"
+        android:text="@string/menu3button"
+        app:layout_constraintBottom_toTopOf="@+id/guideline12"
+        app:layout_constraintEnd_toStartOf="@+id/menu4info"
+        app:layout_constraintStart_toEndOf="@+id/menu2info"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <com.hipo.maskededittext.MaskedEditText
+        android:id="@+id/phoneFieldTest"
+        android:layout_width="200dp"
+        android:layout_height="46dp"
+        android:layout_marginTop="10dp"
+        android:hint="@string/telefonHint"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/phoneField"
+        app:layout_constraintVertical_bias="0.0"
+        app:maskPattern="###-### ## ##"
+        app:maskType="custom"
+        app:returnPattern="##########" />
+
+    <com.hipo.maskededittext.MaskedEditText
+        android:id="@+id/orgnrTest"
+        android:layout_width="200dp"
+        android:layout_height="46dp"
+        android:hint="@string/orgnr"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/phoneField"
+        app:layout_constraintVertical_bias="0.021"
+        app:maskPattern="######-####"
+        app:maskType="custom"
+        app:returnPattern="######-#### " />
+
+    <com.hipo.maskededittext.MaskedEditText
+        android:id="@+id/postnumberTest"
+        android:layout_width="200dp"
+        android:layout_height="46dp"
+        android:hint="@string/postNummerHint"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/orgnrTest"
+        app:layout_constraintVertical_bias="0.0"
+        app:maskPattern="### ##"
+        app:maskType="custom"
+        app:returnPattern="### ##" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

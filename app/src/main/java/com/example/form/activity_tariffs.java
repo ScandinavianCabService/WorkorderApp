@@ -16,6 +16,15 @@ import java.util.Comparator;
 public class activity_tariffs extends AppCompatActivity {
 
     private Button doneButton;
+    private int homeValue = 4;
+
+    private completePackage cp;
+
+    private Button menu1;
+    private Button menu2;
+    private Button menu3;
+    private Button menu4;
+    private Button menu5;
 
     private ToggleButton taxa199;
     private ToggleButton taxa299;
@@ -56,23 +65,30 @@ public class activity_tariffs extends AppCompatActivity {
     private ArrayList<Tarrif_list_item> tList = new ArrayList<>();
     private ArrayList<ToggleButton> buttonList = new ArrayList<>();
 
-    private Tarrif_list_item i199 = new Tarrif_list_item(40, 7.45,339, 199);
+    private Tarrif_list_item i199 = new Tarrif_list_item(40, 7.45, 339, 199);
     private Tarrif_list_item i299 = new Tarrif_list_item(45, 12.5, 515, 299);
     private Tarrif_list_item i375 = new Tarrif_list_item(56, 16.25, 625, 375);
-    private Tarrif_list_item i399 = new Tarrif_list_item(49, 15,800, 399);
+    private Tarrif_list_item i399 = new Tarrif_list_item(49, 15, 800, 399);
     private Tarrif_list_item i495 = new Tarrif_list_item(70, 30, 500, 495);
     private Tarrif_list_item i496 = new Tarrif_list_item(50, 30, 584, 496);
-    private Tarrif_list_item i499 = new Tarrif_list_item(49, 15 , 1200, 499);
-    private Tarrif_list_item i625 = new Tarrif_list_item(70, 32,940, 625);
+    private Tarrif_list_item i499 = new Tarrif_list_item(49, 15, 1200, 499);
+    private Tarrif_list_item i625 = new Tarrif_list_item(70, 32, 940, 625);
     private Tarrif_list_item i750 = new Tarrif_list_item(75, 47.5, 800, 750);
-    private Tarrif_list_item i895 = new Tarrif_list_item(75, 37,1800, 895);
+    private Tarrif_list_item i895 = new Tarrif_list_item(75, 37, 1800, 895);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tariffs2);
 
+
         doneButton = (Button) findViewById(R.id.doneButton);
+
+        menu1 = (Button) findViewById(R.id.menu1tarrifs);
+        menu2 = (Button) findViewById(R.id.menu2tarrifs);
+        menu3 = (Button) findViewById(R.id.menu3tarrifs);
+        menu4 = (Button) findViewById(R.id.menu4tarrifs);
+        menu5 = (Button) findViewById(R.id.menu5tarrifs);
 
         taxa199 = (ToggleButton) findViewById(R.id.taxa199Button);
         taxa299 = (ToggleButton) findViewById(R.id.taxa299Button);
@@ -120,6 +136,41 @@ public class activity_tariffs extends AppCompatActivity {
         buttonList.add(taxa750);
         buttonList.add(taxa895);
 
+        menu1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                sendTo(1);
+            }
+        });
+
+        menu2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                sendTo(2);
+            }
+        });
+
+        menu3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                sendTo(3);
+            }
+        });
+
+        menu4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                sendTo(4);
+            }
+        });
+
+        menu5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                sendTo(5);
+            }
+        });
+
         doneButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -133,18 +184,18 @@ public class activity_tariffs extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                if(taxa199.isChecked()) {
+                if (taxa199.isChecked()) {
 
-                    list.add(199);
+                    cp.addTarrif(199);
                     tList.add(i199);
 
                 } else {
-                    if(list.contains(199)) {
-                        list.remove("199");
+                    if (cp.getTarrifs().contains(199)) {
+                        cp.removeTarrif(199);
 
                     }
 
-                    if(tList.contains(i199)) {
+                    if (tList.contains(i199)) {
 
                         tList.remove(i199);
 
@@ -161,18 +212,18 @@ public class activity_tariffs extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                if(taxa299.isChecked()) {
+                if (taxa299.isChecked()) {
 
-                    list.add(299);
+                    cp.addTarrif(299);
                     tList.add(i299);
 
 
                 } else {
-                    if(list.contains(299)) {
-                        list.remove("299");
+                    if (cp.getTarrifs().contains(299)) {
+                        cp.removeTarrif(299);
                     }
 
-                    if(tList.contains(i299)) {
+                    if (tList.contains(i299)) {
                         tList.remove(i299);
                     }
 
@@ -184,6 +235,32 @@ public class activity_tariffs extends AppCompatActivity {
         });
 
         taxa375.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                if (taxa375.isChecked()) {
+
+                    cp.addTarrif(375);
+                    tList.add(i375);
+
+                } else {
+
+                    if (cp.getTarrifs().contains(375)) {
+                        cp.removeTarrif(375);
+                    }
+
+                    if (tList.contains(i375)) {
+                        tList.remove(i375);
+                    }
+
+                }
+
+                updateTariffs();
+
+            }
+        });
+
+       /* taxa375.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
@@ -207,23 +284,23 @@ public class activity_tariffs extends AppCompatActivity {
                 updateTariffs();
 
             }
-        });
+        }); */
 
         taxa399.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                if(taxa399.isChecked()) {
+                if (taxa399.isChecked()) {
 
-                    list.add(399);
+                    cp.addTarrif(399);
                     tList.add(i399);
 
                 } else {
 
-                    if(list.contains(399)) {
-                        list.remove("399");
+                    if (cp.getTarrifs().contains(399)) {
+                        cp.removeTarrif(399);
                     }
-                    if(tList.contains(i399)) {
+                    if (tList.contains(i399)) {
                         tList.remove(i399);
                     }
                 }
@@ -237,17 +314,17 @@ public class activity_tariffs extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                if(taxa495.isChecked()) {
+                if (taxa495.isChecked()) {
 
-                    list.add(495);
+                    cp.addTarrif(495);
                     tList.add(i495);
 
                 } else {
 
-                    if(list.contains(495)) {
-                        list.remove("495");
+                    if (cp.getTarrifs().contains(495)) {
+                        cp.removeTarrif(495);
                     }
-                    if(tList.contains(i495)) {
+                    if (tList.contains(i495)) {
                         tList.remove(i495);
                     }
                 }
@@ -261,17 +338,17 @@ public class activity_tariffs extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                if(taxa496.isChecked()) {
+                if (taxa496.isChecked()) {
 
-                    list.add(496);
+                    cp.addTarrif(496);
                     tList.add(i496);
 
                 } else {
 
-                    if(list.contains(496)) {
-                        list.remove("496");
+                    if (cp.getTarrifs().contains(496)) {
+                        cp.removeTarrif(496);
                     }
-                    if(tList.contains(i496)) {
+                    if (tList.contains(i496)) {
                         tList.remove(i496);
                     }
                 }
@@ -285,16 +362,16 @@ public class activity_tariffs extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                if(taxa499.isChecked()) {
-                    list.add(499);
+                if (taxa499.isChecked()) {
+                    cp.addTarrif(499);
                     tList.add(i499);
 
                 } else {
 
-                    if(list.contains(499)) {
-                        list.remove("499");
+                    if (cp.getTarrifs().contains(499)) {
+                        cp.removeTarrif(499);
                     }
-                    if(tList.contains(i499)) {
+                    if (tList.contains(i499)) {
                         tList.remove(i499);
                     }
                 }
@@ -308,16 +385,16 @@ public class activity_tariffs extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                if(taxa625.isChecked()) {
-                    list.add(625);
+                if (taxa625.isChecked()) {
+                    cp.addTarrif(625);
                     tList.add(i625);
 
                 } else {
 
-                    if(list.contains(625)) {
-                        list.remove("625");
+                    if (cp.getTarrifs().contains(625)) {
+                        cp.removeTarrif(625);
                     }
-                    if(tList.contains(i625)) {
+                    if (tList.contains(i625)) {
                         tList.remove(i625);
                     }
                 }
@@ -331,16 +408,16 @@ public class activity_tariffs extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                if(taxa750.isChecked()) {
-                    list.add(750);
+                if (taxa750.isChecked()) {
+                    cp.addTarrif(750);
                     tList.add(i750);
 
                 } else {
 
-                    if(list.contains(750)) {
-                        list.remove("750");
+                    if (cp.getTarrifs().contains(750)) {
+                        cp.removeTarrif(750);
                     }
-                    if(tList.contains(i750)) {
+                    if (tList.contains(i750)) {
                         tList.remove(i750);
                     }
                 }
@@ -354,16 +431,16 @@ public class activity_tariffs extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                if(taxa895.isChecked()) {
-                    list.add(895);
+                if (taxa895.isChecked()) {
+                    cp.addTarrif(895);
                     tList.add(i895);
 
                 } else {
 
-                    if(list.contains(895)) {
-                        list.remove("895");
+                    if (cp.getTarrifs().contains(895)) {
+                        cp.removeTarrif(895);
                     }
-                    if(tList.contains(i895)) {
+                    if (tList.contains(i895)) {
                         tList.remove(i895);
                     }
                 }
@@ -373,11 +450,76 @@ public class activity_tariffs extends AppCompatActivity {
             }
         });
 
+        if (getIntent().getExtras().get("package") != null) {
+
+            cp = (completePackage) getIntent().getExtras().get("package");
+
+            if (cp.getTarrifs().size() > 0) {
+                updateTariffs();
+            }
+
+        } else {
+
+            cp = new completePackage();
+        }
+
     }
 
     private void updateTariffs() {
 
-        if(!list.isEmpty()) {
+        if (!cp.getTarrifs().isEmpty()) {
+
+            if (cp.getTarrifs().size() != tList.size()) {
+
+                for (Integer item : cp.getTarrifs()) {
+
+                    switch (item) {
+//TODO: FIND EXACTLY WHAT COMMAND TO SWITCH setSELECTED to to fix the locking problem
+                        case 199:
+                            tList.add(i199);
+                            taxa199.setChecked(true);
+                            break;
+                        case 299:
+                            tList.add(i299);
+                            taxa299.setChecked(true);
+                            break;
+                        case 375:
+                            tList.add(i375);
+                            taxa375.setChecked(true);
+                            break;
+                        case 399:
+                            tList.add(i399);
+                            taxa399.setChecked(true);
+                            break;
+                        case 495:
+                            tList.add(i495);
+                            taxa495.setChecked(true);
+                            break;
+                        case 496:
+                            tList.add(i496);
+                            taxa496.setChecked(true);
+                            break;
+                        case 499:
+                            tList.add(i499);
+                            taxa499.setChecked(true);
+                            break;
+                        case 625:
+                            tList.add(i625);
+                            taxa625.setChecked(true);
+                            break;
+                        case 750:
+                            tList.add(i750);
+                            taxa750.setChecked(true);
+                            break;
+                        case 895:
+                            tList.add(i895);
+                            taxa895.setChecked(true);
+                            break;
+                    }
+
+                }
+
+            }
 
             Collections.sort(list, Collections.<Integer>reverseOrder());
 
@@ -386,7 +528,7 @@ public class activity_tariffs extends AppCompatActivity {
             clear();
             lockButtons();
 
-            if(tList.size() > 0) {
+            if (tList.size() > 0) {
 
                 grundpris1.setText("" + tList.get(0).getGrundpris());
                 krkm1.setText("" + tList.get(0).getKrkm());
@@ -395,7 +537,7 @@ public class activity_tariffs extends AppCompatActivity {
 
             }
 
-            if(tList.size() > 1) {
+            if (tList.size() > 1) {
 
                 grundpris2.setText("" + tList.get(1).getGrundpris());
                 krkm2.setText("" + tList.get(1).getKrkm());
@@ -404,7 +546,7 @@ public class activity_tariffs extends AppCompatActivity {
 
             }
 
-            if(tList.size() > 2) {
+            if (tList.size() > 2) {
 
                 grundpris3.setText("" + tList.get(2).getGrundpris());
                 krkm3.setText("" + tList.get(2).getKrkm());
@@ -413,7 +555,7 @@ public class activity_tariffs extends AppCompatActivity {
 
             }
 
-            if(tList.size() > 3) {
+            if (tList.size() > 3) {
 
                 grundpris4.setText("" + tList.get(3).getGrundpris());
                 krkm4.setText("" + tList.get(3).getKrkm());
@@ -422,7 +564,7 @@ public class activity_tariffs extends AppCompatActivity {
 
             }
 
-            if(tList.size() > 4) {
+            if (tList.size() > 4) {
 
                 grundpris5.setText("" + tList.get(4).getGrundpris());
                 krkm5.setText("" + tList.get(4).getKrkm());
@@ -438,51 +580,51 @@ public class activity_tariffs extends AppCompatActivity {
 
     public void lockButtons() {
 
-        if(tList.size() > 2) {
+        if (tList.size() > 2) {
 
-            if(!taxa199.isChecked()) {
+            if (!taxa199.isChecked()) {
                 taxa199.setEnabled(false);
             }
 
-            if(!taxa299.isChecked()) {
+            if (!taxa299.isChecked()) {
                 taxa299.setEnabled(false);
             }
 
-            if(!taxa375.isChecked()) {
+            if (!taxa375.isChecked()) {
                 taxa375.setEnabled(false);
             }
 
-            if(!taxa399.isChecked()) {
+            if (!taxa399.isChecked()) {
                 taxa399.setEnabled(false);
             }
 
-            if(!taxa495.isChecked()) {
+            if (!taxa495.isChecked()) {
                 taxa495.setEnabled(false);
             }
 
-            if(!taxa496.isChecked()) {
+            if (!taxa496.isChecked()) {
                 taxa496.setEnabled(false);
             }
 
-            if(!taxa499.isChecked()) {
+            if (!taxa499.isChecked()) {
                 taxa499.setEnabled(false);
             }
 
-            if(!taxa625.isChecked()) {
+            if (!taxa625.isChecked()) {
                 taxa625.setEnabled(false);
             }
 
-            if(!taxa750.isChecked()) {
+            if (!taxa750.isChecked()) {
                 taxa750.setEnabled(false);
             }
 
-            if(!taxa895.isChecked()) {
+            if (!taxa895.isChecked()) {
                 taxa895.setEnabled(false);
             }
 
         }
 
-        if(tList.size() < 3) {
+        if (tList.size() < 3) {
 
             taxa199.setEnabled(true);
             taxa299.setEnabled(true);
@@ -527,10 +669,50 @@ public class activity_tariffs extends AppCompatActivity {
         avg5.setText("");
     }
 
+    public void sendTo(int where) {
+        Intent intent;
+        if (where != homeValue) {
+
+
+            switch (where) {
+
+                case 1:
+                    intent = new Intent(this, MainScreen.class);
+                    break;
+                case 2:
+                    intent = new Intent(this, InformationScreen.class);
+                    //startActivity(intent);
+                    break;
+                case 3:
+                    intent = new Intent(this, TaximeterScreen.class);
+                    // startActivity(intent);
+                    break;
+                case 4:
+                    intent = new Intent(this, activity_tariffs.class);
+                    // startActivity(intent);
+                    break;
+                case 5:
+                    intent = new Intent(this, summeryScreen.class);
+                    // startActivity(intent);
+                    break;
+                default:
+                    intent = new Intent(this, MainScreen.class);
+                    System.err.println("!!!!!!!!!!!!!! -- Something went wrong -- !!!!!!!!!!!!!!!!!!");
+                    break;
+
+
+            }
+            intent.putExtra("package", cp);
+            startActivity(intent);
+
+        }
+    }
+
     public void nextPage() {
 
         Intent intent = new Intent(this, summeryScreen.class);
         intent.putExtras(getIntent().getExtras());
+        intent.putExtra("package", cp);
         intent.putExtra("tarrifs", list);
 
         startActivity(intent);

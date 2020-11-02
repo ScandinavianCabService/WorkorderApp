@@ -9,16 +9,16 @@
     <Button
         android:id="@+id/m2Button"
         android:layout_width="600dp"
-        android:layout_height="200dp"
+        android:layout_height="140dp"
         android:text="@string/m2ButtonText"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="@+id/guideline15" />
 
     <Button
         android:id="@+id/c30Button"
         android:layout_width="600dp"
-        android:layout_height="200dp"
+        android:layout_height="140dp"
         android:text="@string/c30ButtonText"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -27,7 +27,7 @@
     <Button
         android:id="@+id/digitaxButton"
         android:layout_width="600dp"
-        android:layout_height="200dp"
+        android:layout_height="140dp"
         android:text="@string/digitaxButtonText"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -36,7 +36,7 @@
     <Button
         android:id="@+id/megtaxButton"
         android:layout_width="600dp"
-        android:layout_height="200dp"
+        android:layout_height="140dp"
         android:text="@string/megtaxButtonText"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -53,5 +53,73 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline15"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="80dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline16"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="60dp" />
+
+    <Button
+        android:id="@+id/menu1taximeter"
+        android:layout_width="120dp"
+        android:layout_height="60dp"
+        android:text="@string/menu1button"
+        app:layout_constraintBottom_toTopOf="@+id/guideline16"
+        app:layout_constraintEnd_toStartOf="@+id/menu2taximeter"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/menu2taximeter"
+        android:layout_width="120dp"
+        android:layout_height="60dp"
+        android:text="@string/menu2button"
+        app:layout_constraintBottom_toTopOf="@+id/guideline16"
+        app:layout_constraintEnd_toStartOf="@+id/menu3taximeter"
+        app:layout_constraintStart_toEndOf="@+id/menu1taximeter"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:id="@+id/menu3taximeter"
+        android:layout_width="120dp"
+        android:layout_height="60dp"
+        android:text="@string/menu3button"
+        app:layout_constraintBottom_toTopOf="@+id/guideline16"
+        app:layout_constraintEnd_toStartOf="@+id/menu4taximeter"
+        app:layout_constraintStart_toEndOf="@+id/menu2taximeter"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:id="@+id/menu4taximeter"
+        android:layout_width="120dp"
+        android:layout_height="60dp"
+        android:text="@string/menu4button"
+        app:layout_constraintBottom_toTopOf="@+id/guideline16"
+        app:layout_constraintEnd_toStartOf="@+id/menu5taximeter"
+        app:layout_constraintStart_toEndOf="@+id/menu3taximeter"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:id="@+id/menu5taximeter"
+        android:layout_width="120dp"
+        android:layout_height="60dp"
+        android:text="@string/menu5button"
+        app:layout_constraintBottom_toTopOf="@+id/guideline16"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/menu4taximeter"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

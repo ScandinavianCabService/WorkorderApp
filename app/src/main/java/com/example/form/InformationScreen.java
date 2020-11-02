@@ -4,11 +4,11 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.text.Editable;
-import android.text.TextWatcher;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+
+import com.hipo.maskededittext.MaskedEditText;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -17,8 +17,18 @@ public class InformationScreen extends AppCompatActivity {
 
     private String task;
 
+    private int homeValue = 2;
+
+
     private Button infoBackButton;
     private Button infoDoneButton;
+
+    private Button menu1;
+    private Button menu2;
+    private Button menu3;
+    private Button menu4;
+    private Button menu5;
+
 
     private EditText regnrField;
     private EditText orgnrField;
@@ -29,15 +39,28 @@ public class InformationScreen extends AppCompatActivity {
     private EditText emailField;
     private EditText telefonField;
 
+    private MaskedEditText telefonField2;
+    private MaskedEditText postnrField2;
+    private MaskedEditText orgnrField2;
+
     private String Registreringsnummer = "Registreringsnummer";
+
+    private completePackage cp;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_information);
 
+
         infoBackButton = (Button) findViewById(R.id.infoBackButton);
         infoDoneButton = (Button) findViewById(R.id.infoDoneButton);
+
+        menu1 = (Button) findViewById(R.id.menu1info);
+        menu2 = (Button) findViewById(R.id.menu2info);
+        menu3 = (Button) findViewById(R.id.menu3info);
+        menu4 = (Button) findViewById(R.id.menu4info);
+        menu5 = (Button) findViewById(R.id.menu5info);
 
         regnrField = (EditText) findViewById(R.id.regNrField);
         orgnrField = (EditText) findViewById(R.id.orgnrField);
@@ -48,7 +71,67 @@ public class InformationScreen extends AppCompatActivity {
         emailField = (EditText) findViewById(R.id.emailField2);
         telefonField = (EditText) findViewById(R.id.phoneField);
 
+        telefonField2 = (MaskedEditText) findViewById(R.id.phoneFieldTest);
+        postnrField2 = (MaskedEditText) findViewById(R.id.postnumberTest);
+        orgnrField2 = (MaskedEditText) findViewById(R.id.orgnrTest);
+
+        if (getIntent().getExtras().get("package") != null) {
+
+            cp = (completePackage) getIntent().getExtras().get("package");
+
+            if(cp.getOrgnr().length() > 0) {
+                regnrField.setText(cp.getRegnr());
+                orgnrField2.setText(cp.getOrgnr());
+                companyField.setText(cp.getCompanyName());
+                adressField.setText(cp.getAdress());
+                postnrField2.setText(cp.getPostnr());
+                ortField.setText(cp.getOrt());
+                emailField.setText(cp.getEmail());
+                telefonField2.setText(cp.getTelefon());
+
+            }
+
+        } else {
+
+            cp = new completePackage();
+        }
+
         task = getIntent().getExtras().getString("task");
+
+        menu1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                sendTo(1);
+            }
+        });
+
+        menu2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                sendTo(2);
+            }
+        });
+
+        menu3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                sendTo(3);
+            }
+        });
+
+        menu4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                sendTo(4);
+            }
+        });
+
+        menu5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                sendTo(5);
+            }
+        });
 
 
         infoBackButton.setOnClickListener(new View.OnClickListener() {
@@ -76,6 +159,15 @@ public class InformationScreen extends AppCompatActivity {
                         emailField.getText().toString(),
                         telefonField.getText().toString());
 
+                cp.setRegnr(regnrField.getText().toString());
+                cp.setOrgnr(orgnrField2.getText().toString());
+                cp.setCompanyName(companyField.getText().toString());
+                cp.setAdress(adressField.getText().toString());
+                cp.setPostnr(postnrField2.getText().toString());
+                cp.setOrt(ortField.getText().toString());
+                cp.setEmail(emailField.getText().toString());
+                cp.setTelefon(telefonField2.getText().toString());
+
                 nextPage(bio);
 
             }
@@ -97,10 +189,10 @@ public class InformationScreen extends AppCompatActivity {
                 regnrField.requestFocus();
                 regnrField.setError("Ogiltigt Registrerings nummer");
                 break;
-            } else if (i == 1 && orgnrField.getText().toString().length() < 10) {
+            } else if (i == 1 && orgnrField2.getText().toString().length() < 10) {
                 returnValue = false;
-                orgnrField.requestFocus();
-                orgnrField.setError("Organisations nummer måste vara 10 siffror");
+                orgnrField2.requestFocus();
+                orgnrField2.setError("Organisations nummer måste vara 10 siffror");
                 break;
             } else if (i == 2 && companyField.getText().toString().length() == 0) {
                 returnValue = false;
@@ -112,10 +204,10 @@ public class InformationScreen extends AppCompatActivity {
                 adressField.requestFocus();
                 adressField.setError("Adress kan inte vara tomt");
                 break;
-            } else if (i == 4 && postnrField.getText().toString().length() < 5) {
+            } else if (i == 4 && postnrField2.getText().toString().length() < 5) {
                 returnValue = false;
-                postnrField.requestFocus();
-                postnrField.setError("Post nummer måste vara 5 siffror");
+                postnrField2.requestFocus();
+                postnrField2.setError("Post nummer måste vara 5 siffror");
                 break;
             } else if (i == 5 && ortField.getText().toString().length() == 0) {
                 returnValue = false;
@@ -141,19 +233,19 @@ public class InformationScreen extends AppCompatActivity {
 
                 boolean telefonError = false;
 
-                telefonError = telefonField.getText().toString().length() == 0;
+                telefonError = telefonField2.getText().toString().length() == 0;
 
                 if (!telefonError) {
-                    telefonError = telefonField.getText().toString().length() < 8;
+                    telefonError = telefonField2.getText().toString().length() < 8;
                 }
                 if (!telefonError) {
-                    telefonError = telefonField.getText().toString().charAt(0) != '0';
+                    telefonError = telefonField2.getText().toString().charAt(0) != '0';
                 }
 
                 if (telefonError) {
                     returnValue = false;
-                    telefonField.requestFocus();
-                    telefonField.setError("Ogiltigt telefon nummer");
+                    telefonField2.requestFocus();
+                    telefonField2.setError("Ogiltigt telefon nummer");
                     break;
                 }
 
@@ -182,6 +274,45 @@ public class InformationScreen extends AppCompatActivity {
 
     }
 
+    public void sendTo(int where) {
+        Intent intent;
+        if (where != homeValue) {
+
+
+            switch (where) {
+
+                case 1:
+                    intent = new Intent(this, MainScreen.class);
+                    break;
+                case 2:
+                    intent = new Intent(this, InformationScreen.class);
+                    //startActivity(intent);
+                    break;
+                case 3:
+                    intent = new Intent(this, TaximeterScreen.class);
+                    // startActivity(intent);
+                    break;
+                case 4:
+                    intent = new Intent(this, activity_tariffs.class);
+                    // startActivity(intent);
+                    break;
+                case 5:
+                    intent = new Intent(this, summeryScreen.class);
+                    // startActivity(intent);
+                    break;
+                default:
+                    intent = new Intent(this, MainScreen.class);
+                    System.err.println("!!!!!!!!!!!!!! -- Something went wrong -- !!!!!!!!!!!!!!!!!!");
+                    break;
+
+
+            }
+            intent.putExtra("package", cp);
+            startActivity(intent);
+
+        }
+    }
+
     private void goBack() {
 
         Intent intent = new Intent(this, MainScreen.class);
@@ -195,6 +326,7 @@ public class InformationScreen extends AppCompatActivity {
 
             Intent intent = new Intent(this, TaximeterScreen.class);
             intent.putExtras(getIntent().getExtras());
+            intent.putExtra("package", cp);
             intent.putExtra("bio", infoPackage);
 
             startActivity(intent);

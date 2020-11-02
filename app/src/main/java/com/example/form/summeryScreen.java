@@ -11,6 +11,7 @@ import okhttp3.Request;
 import okhttp3.RequestBody;
 import okhttp3.Response;
 
+import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.StrictMode;
@@ -21,10 +22,14 @@ import android.widget.TextView;
 public class summeryScreen extends AppCompatActivity {
 
     OkHttpClient client = new OkHttpClient();
+
+    private int homeValue = 5;
     private Button nextButton;
     private Button getTestButton;
     private TextView testField;
+
     private completePackage cp;
+
     public static final MediaType JSON = MediaType.get("application/json; charset=utf-8");
     public static final MediaType PLAINTEXT = MediaType.get("text/plain; charset=utf-8");
     public static final String baseURL = "http://192.168.1.5:8080/RestClient/resources/REST/";
@@ -42,6 +47,12 @@ public class summeryScreen extends AppCompatActivity {
     private String tarrif1;
     private String tarrif2;
     private String tarrif3;
+
+    private Button menu1;
+    private Button menu2;
+    private Button menu3;
+    private Button menu4;
+    private Button menu5;
 
     private TextView typeView;
     private TextView modelView;
@@ -70,10 +81,19 @@ public class summeryScreen extends AppCompatActivity {
             StrictMode.setThreadPolicy(policy);
         }
 
-        infoPackage bio = (infoPackage)getIntent().getExtras().get("bio");
+        if (getIntent().getExtras().get("package") != null) {
+
+            cp = (completePackage) getIntent().getExtras().get("package");
+
+        } else {
+
+            cp = new completePackage();
+        }
+
+        infoPackage bio = (infoPackage) getIntent().getExtras().get("bio");
         String task = getIntent().getExtras().getString("task");
         String taxameter = getIntent().getExtras().getString("taxameter");
-        ArrayList<Integer> tarrifs = (ArrayList<Integer>)getIntent().getExtras().get("tarrifs");
+        ArrayList<Integer> tarrifs = (ArrayList<Integer>) getIntent().getExtras().get("tarrifs");
 
         typeView = (TextView) findViewById(R.id.typeSum);
         modelView = (TextView) findViewById(R.id.modelSum);
@@ -89,7 +109,24 @@ public class summeryScreen extends AppCompatActivity {
         tarrifView2 = (TextView) findViewById(R.id.tarrifSum2);
         tarrifView3 = (TextView) findViewById(R.id.tarrifSum3);
 
-        typeView.setText(task);
+        menu1 = (Button) findViewById(R.id.menu1summery);
+        menu2 = (Button) findViewById(R.id.menu2summery);
+        menu3 = (Button) findViewById(R.id.menu3summery);
+        menu4 = (Button) findViewById(R.id.menu4summery);
+        menu5 = (Button) findViewById(R.id.menu5summery);
+
+        typeView.setText(cp.getTask());
+        modelView.setText(cp.getTaxameter());
+        regnrView.setText(cp.getRegnr());
+        orgnrView.setText(cp.getOrgnr());
+        companyNameView.setText(cp.getCompanyName());
+        adressView.setText(cp.getAdress());
+        postnrView.setText(cp.getPostnr());
+        ortView.setText(cp.getOrt());
+        emailView.setText(cp.getEmail());
+        telefonView.setText(cp.getTelefon());
+
+       /* typeView.setText(task);
         modelView.setText(taxameter);
         regnrView.setText(bio.getRegnr());
         orgnrView.setText(bio.getOrgnr());
@@ -98,18 +135,29 @@ public class summeryScreen extends AppCompatActivity {
         postnrView.setText(bio.getPostnr());
         ortView.setText(bio.getOrt());
         emailView.setText(bio.getEmail());
-        telefonView.setText(bio.getTelefon());
-        if(tarrifs.size() > 0) {
-            tarrifView1.setText("" + tarrifs.get(0).toString());
+        telefonView.setText(bio.getTelefon()); */
+
+        if (cp.getTarrifs().size() > 0) {
+            tarrifView1.setText("" + cp.getTarrifs().get(0).toString());
         }
-        if(tarrifs.size() > 1) {
-            tarrifView2.setText("" + tarrifs.get(1).toString());
+        if (cp.getTarrifs().size() > 1) {
+            tarrifView2.setText("" + cp.getTarrifs().get(1).toString());
         }
-        if(tarrifs.size() > 2) {
-            tarrifView3.setText("" + tarrifs.get(2).toString());
+        if (cp.getTarrifs().size() > 2) {
+            tarrifView3.setText("" + cp.getTarrifs().get(2).toString());
         }
 
-        cp = new completePackage(bio, task, taxameter, tarrifs);
+        /* if (tarrifs.size() > 0) {
+            tarrifView1.setText("" + tarrifs.get(0).toString());
+        }
+        if (tarrifs.size() > 1) {
+            tarrifView2.setText("" + tarrifs.get(1).toString());
+        }
+        if (tarrifs.size() > 2) {
+            tarrifView3.setText("" + tarrifs.get(2).toString());
+        } */
+
+        //cp = new completePackage(bio, task, taxameter, tarrifs);
 
         testField = (TextView) findViewById(R.id.testField);
 
@@ -144,7 +192,44 @@ public class summeryScreen extends AppCompatActivity {
             }
         });
 
+        menu1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                sendTo(1);
+            }
+        });
+
+        menu2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                sendTo(2);
+            }
+        });
+
+        menu3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                sendTo(3);
+            }
+        });
+
+        menu4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                sendTo(4);
+            }
+        });
+
+        menu5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                sendTo(5);
+            }
+        });
+
     }
+
+
 
     protected void post() throws IOException {
 
@@ -178,7 +263,44 @@ public class summeryScreen extends AppCompatActivity {
 
     }
 
+    public void sendTo(int where) {
+        Intent intent;
+        if (where != homeValue) {
 
+
+            switch (where) {
+
+                case 1:
+                    intent = new Intent(this, MainScreen.class);
+                    break;
+                case 2:
+                    intent = new Intent(this, InformationScreen.class);
+                    //startActivity(intent);
+                    break;
+                case 3:
+                    intent = new Intent(this, TaximeterScreen.class);
+                    // startActivity(intent);
+                    break;
+                case 4:
+                    intent = new Intent(this, activity_tariffs.class);
+                    // startActivity(intent);
+                    break;
+                case 5:
+                    intent = new Intent(this, summeryScreen.class);
+                    // startActivity(intent);
+                    break;
+                default:
+                    intent = new Intent(this, MainScreen.class);
+                    System.err.println("!!!!!!!!!!!!!! -- Something went wrong -- !!!!!!!!!!!!!!!!!!");
+                    break;
+
+
+            }
+            intent.putExtra("package", cp);
+            startActivity(intent);
+
+        }
+    }
 
 
 }

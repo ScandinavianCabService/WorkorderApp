@@ -31,4 +31,9 @@
     <string name="nextButtonText">Nästa</string>
     <string name="completeButtonText">Klar</string>
     <string name="orgnr">Organization number</string>
+    <string name="menu1button">Arbete</string>
+    <string name="menu2button">Information</string>
+    <string name="menu3button">Taxameter</string>
+    <string name="menu4button">Tarrif</string>
+    <string name="menu5button">Summering</string>
 </resources>

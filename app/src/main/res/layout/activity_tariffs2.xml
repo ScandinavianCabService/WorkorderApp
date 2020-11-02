@@ -11,7 +11,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="60dp"
-        android:layout_marginTop="60dp"
         android:checked="false"
         android:text="199"
         android:textOff="199"
@@ -19,15 +18,14 @@
         app:layout_constraintEnd_toStartOf="@+id/taxa299Button"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="@+id/guideline13" />
 
     <ToggleButton
         android:id="@+id/taxa499button"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="48dp"
         android:layout_marginStart="30dp"
         android:layout_marginTop="40dp"
-        android:layout_marginBottom="20dp"
         android:checked="false"
         android:text="499"
         android:textOff="499"
@@ -36,15 +34,15 @@
         app:layout_constraintEnd_toStartOf="@+id/taxa625Button"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/taxa496Button"
-        app:layout_constraintTop_toBottomOf="@+id/taxa299Button" />
+        app:layout_constraintTop_toBottomOf="@+id/taxa299Button"
+        app:layout_constraintVertical_bias="1.0" />
 
     <ToggleButton
         android:id="@+id/taxa625Button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="88dp"
+        android:layout_height="48dp"
         android:layout_marginStart="30dp"
         android:layout_marginTop="40dp"
-        android:layout_marginBottom="20dp"
         android:checked="false"
         android:text="625"
         android:textOff="625"
@@ -53,16 +51,16 @@
         app:layout_constraintEnd_toStartOf="@+id/taxa750Button"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/taxa499button"
-        app:layout_constraintTop_toBottomOf="@+id/taxa375Button" />
+        app:layout_constraintTop_toBottomOf="@+id/taxa375Button"
+        app:layout_constraintVertical_bias="1.0" />
 
     <ToggleButton
         android:id="@+id/taxa895Button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="88dp"
+        android:layout_height="48dp"
         android:layout_marginStart="30dp"
         android:layout_marginTop="40dp"
         android:layout_marginEnd="60dp"
-        android:layout_marginBottom="20dp"
         android:checked="false"
         android:text="895"
         android:textOff="895"
@@ -71,15 +69,15 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/taxa750Button"
-        app:layout_constraintTop_toBottomOf="@+id/taxa495Button" />
+        app:layout_constraintTop_toBottomOf="@+id/taxa495Button"
+        app:layout_constraintVertical_bias="1.0" />
 
     <ToggleButton
         android:id="@+id/taxa750Button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="88dp"
+        android:layout_height="48dp"
         android:layout_marginStart="30dp"
         android:layout_marginTop="40dp"
-        android:layout_marginBottom="20dp"
         android:checked="false"
         android:text="750"
         android:textOff="750"
@@ -88,7 +86,8 @@
         app:layout_constraintEnd_toStartOf="@+id/taxa895Button"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/taxa625Button"
-        app:layout_constraintTop_toBottomOf="@+id/taxa399Button" />
+        app:layout_constraintTop_toBottomOf="@+id/taxa399Button"
+        app:layout_constraintVertical_bias="1.0" />
 
     <ToggleButton
         android:id="@+id/taxa496Button"
@@ -96,7 +95,6 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="60dp"
         android:layout_marginTop="40dp"
-        android:layout_marginBottom="20dp"
         android:checked="false"
         android:text="496"
         android:textOff="496"
@@ -104,56 +102,53 @@
         app:layout_constraintBottom_toTopOf="@+id/guideline4"
         app:layout_constraintEnd_toStartOf="@+id/taxa499button"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/taxa199Button" />
+        app:layout_constraintTop_toBottomOf="@+id/taxa199Button"
+        app:layout_constraintVertical_bias="1.0" />
 
     <ToggleButton
         android:id="@+id/taxa299Button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="30dp"
-        android:layout_marginTop="60dp"
         android:checked="false"
         android:text="299"
         android:textOff="299"
         android:textOn="299"
         app:layout_constraintEnd_toStartOf="@+id/taxa375Button"
         app:layout_constraintStart_toEndOf="@+id/taxa199Button"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="@+id/guideline13" />
 
     <ToggleButton
         android:id="@+id/taxa375Button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="30dp"
-        android:layout_marginTop="60dp"
         android:checked="false"
         android:text="375"
         android:textOff="375"
         android:textOn="375"
         app:layout_constraintEnd_toStartOf="@+id/taxa399Button"
         app:layout_constraintStart_toEndOf="@+id/taxa299Button"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="@+id/guideline13" />
 
     <ToggleButton
         android:id="@+id/taxa399Button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="30dp"
-        android:layout_marginTop="60dp"
         android:checked="false"
         android:text="399"
         android:textOff="399"
         android:textOn="399"
         app:layout_constraintEnd_toStartOf="@+id/taxa495Button"
         app:layout_constraintStart_toEndOf="@+id/taxa375Button"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="@+id/guideline13" />
 
     <ToggleButton
         android:id="@+id/taxa495Button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="30dp"
-        android:layout_marginTop="60dp"
         android:layout_marginEnd="60dp"
         android:checked="false"
         android:text="495"
@@ -161,7 +156,7 @@
         android:textOn="495"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/taxa399Button"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="@+id/guideline13" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline4"
@@ -438,5 +433,69 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tableRow4" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline13"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="80dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline14"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="60dp" />
+
+    <Button
+        android:id="@+id/menu1tarrifs"
+        android:layout_width="120dp"
+        android:layout_height="60dp"
+        android:text="@string/menu1button"
+        app:layout_constraintBottom_toTopOf="@+id/guideline14"
+        app:layout_constraintEnd_toStartOf="@+id/menu2tarrifs"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/menu2tarrifs"
+        android:layout_width="120dp"
+        android:layout_height="60dp"
+        android:text="@string/menu2button"
+        app:layout_constraintBottom_toTopOf="@+id/guideline14"
+        app:layout_constraintEnd_toStartOf="@+id/menu3tarrifs"
+        app:layout_constraintStart_toEndOf="@+id/menu1tarrifs"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/menu3tarrifs"
+        android:layout_width="120dp"
+        android:layout_height="60dp"
+        android:text="@string/menu3button"
+        app:layout_constraintBottom_toTopOf="@+id/guideline14"
+        app:layout_constraintEnd_toStartOf="@+id/menu4tarrifs"
+        app:layout_constraintStart_toEndOf="@+id/menu2tarrifs"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/menu4tarrifs"
+        android:layout_width="120dp"
+        android:layout_height="60dp"
+        android:text="@string/menu4button"
+        app:layout_constraintBottom_toTopOf="@+id/guideline14"
+        app:layout_constraintEnd_toStartOf="@+id/menu5tarrifs"
+        app:layout_constraintStart_toEndOf="@+id/menu3tarrifs"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/menu5tarrifs"
+        android:layout_width="120dp"
+        android:layout_height="60dp"
+        android:text="@string/menu5button"
+        app:layout_constraintBottom_toTopOf="@+id/guideline14"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/menu4tarrifs"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

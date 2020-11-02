@@ -1,2 +1,3 @@
+include ':maskededittext'
 rootProject.name='Form'
 include ':app'
