@@ -10,17 +10,15 @@
         android:id="@+id/regNrField"
         android:layout_width="140dp"
         android:layout_height="60dp"
-        android:layout_marginEnd="25dp"
         android:autofillHints=""
         android:ems="10"
         android:freezesText="false"
         android:hint="@string/regnrHint"
         android:inputType="textPersonName|textCapCharacters"
         android:maxLength="6"
-        android:nextFocusDown="@id/orgnrField"
+        android:nextFocusDown="@id/orgnrTest"
         android:singleLine="true"
         app:layout_constraintBottom_toTopOf="@+id/companyNameField"
-        app:layout_constraintEnd_toStartOf="@+id/orgnrField"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/guideline11" />
 
@@ -47,26 +45,10 @@
         android:ems="10"
         android:hint="@string/AdressHint"
         android:inputType="textPersonName|textCapSentences"
-        app:layout_constraintBottom_toTopOf="@+id/postnrField"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/companyNameField" />
-
-    <EditText
-        android:id="@+id/postnrField"
-        android:layout_width="220dp"
-        android:layout_height="60dp"
-        android:autofillHints=""
-        android:ems="10"
-        android:hint="@string/postNummerHint"
-        android:inputType="number"
-        android:maxLength="5"
-        android:nextFocusDown="@id/ortField"
-        app:layout_constraintBottom_toTopOf="@+id/emailField2"
-        app:layout_constraintEnd_toStartOf="@+id/ortField"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/adressField" />
 
     <EditText
         android:id="@+id/ortField"
@@ -76,9 +58,9 @@
         android:ems="10"
         android:hint="@string/ortHint"
         android:inputType="textPersonName|textCapSentences"
+        android:nextFocusDown="@id/emailField2"
         app:layout_constraintBottom_toTopOf="@+id/emailField2"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/postnrField"
         app:layout_constraintTop_toBottomOf="@+id/adressField" />
 
     <EditText
@@ -89,25 +71,10 @@
         android:ems="10"
         android:hint="@string/epostHint"
         android:inputType="textWebEmailAddress|textCapSentences"
-        app:layout_constraintBottom_toTopOf="@+id/phoneField"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ortField" />
-
-    <EditText
-        android:id="@+id/phoneField"
-        android:layout_width="600dp"
-        android:layout_height="60dp"
-        android:autofillHints=""
-        android:ems="10"
-        android:hint="@string/telefonHint"
-        android:inputType="phone"
-        android:maxLength="10"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/emailField2" />
 
     <Button
         android:id="@+id/infoBackButton"
@@ -118,38 +85,21 @@
         android:text="@string/infoBackButtonText"
         app:layout_constraintBottom_toTopOf="@+id/companyNameField"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/orgnrField"
         app:layout_constraintTop_toTopOf="@+id/guideline11" />
 
     <Button
         android:id="@+id/infoDoneButton"
         android:layout_width="88dp"
         android:layout_height="48dp"
-        android:layout_marginTop="253dp"
-        android:layout_marginEnd="37dp"
-        android:layout_marginBottom="59dp"
+        android:layout_marginStart="476dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="36dp"
+        android:layout_marginBottom="456dp"
         android:text="@string/infoDoneButtonText"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/phoneField" />
-
-    <EditText
-        android:id="@+id/orgnrField"
-        android:layout_width="0dp"
-        android:layout_height="60dp"
-        android:layout_marginStart="4dp"
-        android:layout_marginEnd="62dp"
-        android:autofillHints=""
-        android:ems="10"
-        android:hint="@string/orgnr"
-        android:inputType="number"
-        android:maxLength="10"
-        android:nextFocusDown="@id/companyNameField"
-        android:singleLine="true"
-        app:layout_constraintBottom_toTopOf="@+id/companyNameField"
-        app:layout_constraintEnd_toStartOf="@+id/infoBackButton"
-        app:layout_constraintStart_toEndOf="@+id/regNrField"
-        app:layout_constraintTop_toTopOf="@+id/guideline11" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/phoneFieldTest" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline11"
@@ -221,15 +171,14 @@
 
     <com.hipo.maskededittext.MaskedEditText
         android:id="@+id/phoneFieldTest"
-        android:layout_width="200dp"
+        android:layout_width="600dp"
         android:layout_height="46dp"
-        android:layout_marginTop="10dp"
         android:hint="@string/telefonHint"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/phoneField"
+        app:layout_constraintTop_toBottomOf="@+id/emailField2"
         app:layout_constraintVertical_bias="0.0"
         app:maskPattern="###-### ## ##"
         app:maskType="custom"
@@ -238,26 +187,28 @@
     <com.hipo.maskededittext.MaskedEditText
         android:id="@+id/orgnrTest"
         android:layout_width="200dp"
-        android:layout_height="46dp"
+        android:layout_height="60dp"
         android:hint="@string/orgnr"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/phoneField"
-        app:layout_constraintVertical_bias="0.021"
+        app:layout_constraintBottom_toTopOf="@+id/companyNameField"
+        app:layout_constraintEnd_toStartOf="@+id/infoBackButton"
+        app:layout_constraintHorizontal_bias="0.257"
+        app:layout_constraintStart_toEndOf="@+id/regNrField"
+        app:layout_constraintTop_toTopOf="@+id/guideline11"
         app:maskPattern="######-####"
         app:maskType="custom"
         app:returnPattern="######-#### " />
 
     <com.hipo.maskededittext.MaskedEditText
         android:id="@+id/postnumberTest"
-        android:layout_width="200dp"
-        android:layout_height="46dp"
+        android:layout_width="220dp"
+        android:layout_height="60dp"
         android:hint="@string/postNummerHint"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:nextFocusDown="@id/ortField"
+        app:layout_constraintBottom_toTopOf="@+id/emailField2"
+        app:layout_constraintEnd_toStartOf="@+id/ortField"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/orgnrTest"
+        app:layout_constraintTop_toBottomOf="@+id/adressField"
         app:layout_constraintVertical_bias="0.0"
         app:maskPattern="### ##"
         app:maskType="custom"

@@ -63,13 +63,13 @@ public class InformationScreen extends AppCompatActivity {
         menu5 = (Button) findViewById(R.id.menu5info);
 
         regnrField = (EditText) findViewById(R.id.regNrField);
-        orgnrField = (EditText) findViewById(R.id.orgnrField);
+        //   orgnrField = (EditText) findViewById(R.id.orgnrField);
         companyField = (EditText) findViewById(R.id.companyNameField);
         adressField = (EditText) findViewById(R.id.adressField);
-        postnrField = (EditText) findViewById(R.id.postnrField);
+        //  postnrField = (EditText) findViewById(R.id.postnrField);
         ortField = (EditText) findViewById(R.id.ortField);
         emailField = (EditText) findViewById(R.id.emailField2);
-        telefonField = (EditText) findViewById(R.id.phoneField);
+        //   telefonField = (EditText) findViewById(R.id.phoneField);
 
         telefonField2 = (MaskedEditText) findViewById(R.id.phoneFieldTest);
         postnrField2 = (MaskedEditText) findViewById(R.id.postnumberTest);
@@ -151,13 +151,13 @@ public class InformationScreen extends AppCompatActivity {
 
                 infoPackage bio = new infoPackage(
                         regnrField.getText().toString(),
-                        orgnrField.getText().toString(),
+                        orgnrField2.getText().toString(),
                         companyField.getText().toString(),
                         adressField.getText().toString(),
-                        postnrField.getText().toString(),
+                        postnrField2.getText().toString(),
                         ortField.getText().toString(),
                         emailField.getText().toString(),
-                        telefonField.getText().toString());
+                        telefonField2.getText().toString());
 
                 cp.setRegnr(regnrField.getText().toString());
                 cp.setOrgnr(orgnrField2.getText().toString());
